@@ -2,14 +2,10 @@
 import express from "express";
 import cors from "cors";
 import { v4 as uuidv4 } from "uuid";
-import mongoose from 'mongoose';
 
 const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
-
-// Import environment config
-require("dotenv/config");
 
 // Common middleware
 app.use(cors());
@@ -32,7 +28,6 @@ io.on("connection", (socket) => {
 
     socket.broadcast.emit("join", allUsers);
     socket.emit("join", allUsers);
-
   });
 
   socket.on("message", function (data) {
@@ -65,7 +60,6 @@ io.on("connection", (socket) => {
         });
       }
 
-    
     io.emit("message", allUsers);
   });
 

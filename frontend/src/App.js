@@ -430,6 +430,7 @@ function App() {
                                   backgroundColor: "#d8f5d3",
                                   padding: "10px 20px 10px 20px",
                                   borderRadius: 30,
+                                  maxWidth:"40vw",
                                   color: "#000",
                                 }}
                               >
